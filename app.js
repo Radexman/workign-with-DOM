@@ -31,4 +31,48 @@
 //     el.className = 'cool';
 // }
 
-let item = document.getElementById('one').firstChild.nextSibling.nodeValue;
+// let item = document.getElementById('one').firstChild.nextSibling.nodeValue;
+
+// let elContent = document.getElementById('one').innerHTML;
+// console.log(elContent);
+
+// let newEl = document.createElement('li');
+// let newText = document.createTextNode('komosa ryżowa');
+// newEl.appendChild(newText);
+// let position = document.getElementsByTagName('ul')[0];
+// position.appendChild(newEl);
+
+// let removeEl = document.getElementsByName('li')[3];
+// let containerEl = removeEl.parentNode;
+// containerEl.removeChild(removeEl);
+
+// let firstItem = document.getElementById('one');
+// firstItem.classList.add('complete');
+
+// let fourthItem = document.getElementsByTagName('li')[3];
+// fourthItem.setAttribute('class', 'cool');
+
+// if (firstItem.hasAttribute('class')) {
+//     firstItem.removeAttribute('class');
+// }
+
+let list = document.getElementsByTagName('ul')[0];
+let newItemLast = document.createElement('li');
+let newTextLast = document.createTextNode('krem');
+newItemLast.appendChild(newTextLast);
+list.appendChild(newItemLast);
+
+let newItemFirst = document.createElement('li');
+let newTextFirst = document.createTextNode('kapusta');
+newItemFirst.appendChild(newTextFirst);
+list.insertBefore(newItemFirst, list.firstChild);
+
+let listItems = document.querySelectorAll('li');
+let i = 0;
+for (i; i < listItems.length; i++) {
+    listItems[i].classList.add('cool');
+}
+
+let heading = document.querySelector('h2');
+let totalItems = listItems.length;
+heading.textContent+= ` ${totalItems}`;
